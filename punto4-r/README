@@ -1,7 +1,0 @@
-Compilar con  
-
-- bison -d punto4.y 
-- lex punto4.l  
-- gcc punto4.tab.c lex.yy.c -lfl -lm
-
-
