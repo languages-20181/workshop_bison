@@ -1,7 +1,7 @@
 %{
 	#include "punto4.tab.h"
 	extern int yylval;
-	int debug = 1;
+	int debug = 0;
 %}
 
 %%

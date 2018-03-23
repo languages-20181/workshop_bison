@@ -9,4 +9,3 @@ extern int yylval;
 \n return 0;
 .  return yytext[0];
 %%
-cal1

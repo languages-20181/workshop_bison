@@ -382,8 +382,8 @@ char *yytext;
 #line 2 "punto4.l"
 	#include "punto4.tab.h"
 	extern int yylval;
-	int debug = 1;
-#line 387 "lex.yy.c"
+	int debug = 0;
+#line 471 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
