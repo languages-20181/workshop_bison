@@ -23,7 +23,6 @@ term: term '*' factor {$$ = $1 * $3; }
 factor: '(' expression ')' { $$ =$2;}
 	| NUMBER
 	;
-
 %%
 extern FILE *yyin;
 main()

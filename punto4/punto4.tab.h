@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_PUNTO3_TAB_H_INCLUDED
-# define YY_YY_PUNTO3_TAB_H_INCLUDED
+#ifndef YY_YY_PUNTO4_TAB_H_INCLUDED
+# define YY_YY_PUNTO4_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -45,39 +45,15 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    RPARENTHESIS = 258,
-    LPARENTHESIS = 259,
-    EOLN = 260,
-    MULTIPLY = 261,
-    DIVIDE = 262,
-    ADD = 263,
-    SUBTRACT = 264,
-    EXPONENT = 265,
-    E = 266,
-    LN = 267,
-    LOG = 268,
-    SQRT = 269,
-    EQUALS = 270,
-    VARIABLE = 271,
-    NUMBER = 272
+    NAME = 258,
+    NUMBER = 259,
+    FUNCTION = 260
   };
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-
-union YYSTYPE
-{
-#line 33 "punto3.y" /* yacc.c:1909  */
-
-	struct calculator *fun;
-	double du;
-	char *str;
-
-#line 78 "punto3.tab.h" /* yacc.c:1909  */
-};
-
-typedef union YYSTYPE YYSTYPE;
+typedef int YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
@@ -87,4 +63,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_PUNTO3_TAB_H_INCLUDED  */
+#endif /* !YY_YY_PUNTO4_TAB_H_INCLUDED  */
