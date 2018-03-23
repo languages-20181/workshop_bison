@@ -4,14 +4,19 @@
 #include <string.h>
 %}
 
-%token NAME NUMBER FUNCTION
+%token NAME NUMBER POW EXP SQRT LOG
 %%
 
 statement: NAME '=' expression
-	| expression {printf("= %d\n",$1);}
+	| expression {
+		if ($1 == (double)((int)$1))
+			printf("= %d\n",$1);
+		else
+			printf("= %f\n",$1);
+	}
 	;
 
-expression: expression '+' term {$$ = $1 + $3; }
+expression: expression '+' term {$$ = $1 + $3;}
 	| expression '-' term {$$ = $1 - $3; }
 	| term
 	| function
@@ -33,18 +38,10 @@ factor: '(' expression ')' 	   { $$ =  $2;}
 	| NUMBER
 	;
 
-function: FUNCTION '(' expression ',' expression ')' {
-		//The only function with two arguments is pow
-		$$ = pow($3, $5);
-	}
-	| FUNCTION '(' expression ')' {
-		if(!strcmp("sqrt", $1)) $$ = sqrt($3);
-		else if (!strcmp("exp", $1)) $$ = exp($3);
-		else if (!strcmp("log", $1)) $$ = log($3);
-
-		//printf("%s\n", $1, $3);
-	}
-
+function: POW '(' expression ',' expression ')' { $$ = pow($3, $5); }
+	| EXP '(' expression ')' { $$ = exp($3); }
+	| SQRT '(' expression ')' { $$ = sqrt($3); }
+	| LOG '(' expression ')' { $$ = log($3); }
 %%
 extern FILE *yyin;
 main()

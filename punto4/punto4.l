@@ -6,13 +6,28 @@
 
 %%
 
-sqrt	|
-pow		|
-exp		|
-log		{
+"sqrt"	{
 	yylval = atoi(yytext); 
 	if (debug) printf("FUNCTION = %s\n",yytext);
-	return FUNCTION; 
+	return SQRT; 
+}
+
+"pow"	{
+	yylval = atoi(yytext); 
+	if (debug) printf("FUNCTION = %s\n",yytext);
+	return POW; 
+}
+
+"exp"	{
+	yylval = atoi(yytext); 
+	if (debug) printf("FUNCTION = %s\n",yytext);
+	return EXP; 
+}
+
+"log"		{
+	yylval = atoi(yytext); 
+	if (debug) printf("FUNCTION = %s\n",yytext);
+	return LOG; 
 }
 
 [0-9]+				|

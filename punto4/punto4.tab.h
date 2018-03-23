@@ -47,7 +47,10 @@ extern int yydebug;
   {
     NAME = 258,
     NUMBER = 259,
-    FUNCTION = 260
+    POW = 260,
+    EXP = 261,
+    SQRT = 262,
+    LOG = 263
   };
 #endif
 
